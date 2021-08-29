@@ -8,7 +8,6 @@ const Login = () => {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  const [Details, setDetails] = useState("");
   const dispatch = useDispatch();
   let history = useHistory();
   const handleClick = (e) => {
@@ -16,18 +15,17 @@ const Login = () => {
     // console.log(Name,Email,Password);
     dispatch(
       addTodo({
-        name: Name,
-        email: Email,
-        Password: Password,
+        pan: Name,
+        dob: Email,
       })
     );
 
-    history.push("/info");
+    history.push("/log");
   };
   return (
     <div>
       <h1>HELLO WORLD</h1>
-      Name:{" "}
+      PanCard:{" "}
       <input
         type="text"
         onChange={(e) => setName(e.target.value)}
@@ -35,19 +33,11 @@ const Login = () => {
         className="form-control"
         name="title"
       />
-      emial:{" "}
+      DOB:{" "}
       <input
         type="text"
         onChange={(e) => setEmail(e.target.value)}
         value={Email}
-        className="form-control"
-        name="title"
-      />
-      password:{" "}
-      <input
-        type="text"
-        onChange={(e) => setPassword(e.target.value)}
-        value={Password}
         className="form-control"
         name="title"
       />
